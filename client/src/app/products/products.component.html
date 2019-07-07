@@ -1,0 +1,113 @@
+  
+
+<form #productsForm="ngForm" (ngSubmit)="onSubmit(productsForm)" >
+  <!-- {{ productsForm.value | json }} -->
+
+<nav class="navbar navbar-light "  style="background-color: #f64813e8;">
+  <input type="text"  class="form-control mr-sm-2"  name="query" #query="ngModel" [(ngModel)]="q" placeholder="Company or product name" aria-label="Search">
+  <button type="submit" class="btn btn-outline-success "  name="submit" >Search</button>
+
+
+</nav>
+  <select name="ram" #filters[ram]="ngModel" [(ngModel)]="ram">
+    <option value="2GB">2GB</option>
+    <option value="4GB">4GB</option>
+    <option value="6GB">6GB</option>
+    <option value="8GB">8GB</option>
+    <option value="12GB">12GB</option>
+    <option value="16GB">16GB</option>
+    <option value="32GB">32GB</option>
+  </select>
+
+  <select name="cpu" #filters[cpu]="ngModel" [(ngModel)]="cpu">
+    <option value="Core i3">Core i3</option>
+    <option value="Core i5">Core i5</option>
+    <option value="Core i7">Core i7</option>
+    <option value="Core N3710">Core N3710 </option>
+    <option value="Core N3350">Core N3350</option>
+    <option value="Core N3700">Core N3700</option>
+    <option value="Core M 6Y30">Core M 6Y30</option>
+    <option value="Dual Core N3060 ">Dual Core N3060 </option>
+    <option value="A9-Series 9410">A9-Series 9410</option>
+    <option value="E-Series 7110">E-Series 7110</option>
+    <option value="Intel Core M ">Intel Core M </option>
+    <option value="A6-Series 9220">A6-Series 9220</option>
+    <option value="Atom x5-Z8550">Atom x5-Z8550</option>
+    <option value="Dual Core 4405Y">Dual Core 4405Y</option>
+  </select>
+
+  <select name="opsys" #filters[opsys]="ngModel" [(ngModel)]="opsys">
+    <option value="macOS">macOS</option>
+    <option value="Mac OS X">Mac OS X</option>
+    <option value="Linux">Linux</option>
+    <option value="Windows 7">Windows 7</option>
+    <option value="Windows 10">Windows 10</option>
+    <option value="Windows 10 S">Windows 10 S</option>
+    <option value="Chrome OS">Chrome OS</option>
+    <option value="No OS">No OS</option>
+  </select>
+
+  <select name="inches" #filters[inches]="ngModel" [(ngModel)]="inches">
+    <option value="10.1">10.1</option>
+    <option value="11.6">11.6</option>
+    <option value="12.5">12.5</option>
+    <option value="13">13</option>
+    <option value="13.3">13.3</option>
+    <option value="13.9">13.9</option>
+    <option value="14">14</option>
+    <option value="15.6">15.6</option>
+    <option value="17.3">17.3</option>
+    <option value="18.4">18.4</option>
+  </select>
+</form>
+
+
+<!-- <div class="container-fluid"> -->
+  <div *ngFor="let product of products" style="color: #ffffff;">
+      <div class="contactHolder"  id="column">
+ <ul>
+   <li>Company :  {{product.Company}} </li>
+   <li>Product :  {{product.Product}} </li>
+   <li>Type    :  {{product.Type}} </li>
+   <li>CPU     :  {{product.CPU}} </li>
+   <li>RAM     :  {{product.RAM}} </li>
+   <li>Price   :  {{product.Price}} </li>
+ </ul>
+</div>
+    </div>
+
+    
+
+
+
+  <script>
+      // Get the elements with class="column"
+      var elements = document.getElementById("column");
+      
+      // Declare a loop variable
+      var i;
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      // List View
+      if(width < 800 && height <= 700) {
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.width = "50%";
+        }
+      }
+          // Grid View tablet
+      if(width >= 800 && height >= 1280) {
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.width = "50%";
+        }
+      }
+      
+      // Grid View pc
+     if(width>=1280 && height >= 1024){
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.width = "33.333333333%";
+        }
+      }
+      
+  
+      </script>

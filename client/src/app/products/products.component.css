@@ -1,0 +1,27 @@
+.contactHolder{
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 600;
+    /* Size and position */
+    width: 400px;
+    height:230px;
+    position: relative;
+    margin: 60px auto 30px;
+    padding: 30px;
+    overflow: hidden;
+
+    /* Styles */
+    background: #00000094; 
+    /* color:#fff; */
+    line-height:1.7;
+    border-radius: 0.4em;
+    border: 3px solid #f64813e8;
+    box-shadow: 
+        inset 0 0 2px 1px rgba(255,255,255,0.08), 
+        0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+li{
+    list-style-type: none;
+}
+#column{
+    margin-left: 50px;
+}

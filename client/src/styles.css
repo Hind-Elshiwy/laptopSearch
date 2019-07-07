@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* @import '~font-awesome/css/font-awesome.css'; */
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+/* BASIC */
+
+
+
+.products{
+  background-image: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  /* background-image: url('https://mobo.co.uk/wp-content/uploads/2014/11/Website-Design-Background.png'); */
+  background-image: url('/assets/img/1hind.png');
+  background-size: cover;
+}
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+} 
+
+* {
+  box-sizing: border-box;
+}
+
