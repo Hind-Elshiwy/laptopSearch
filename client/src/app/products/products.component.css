@@ -36,3 +36,8 @@ li{
     display: table;
     clear: both;
   }
+
+  nav{
+    width: 100%;
+  }
+
