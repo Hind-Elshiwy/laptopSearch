@@ -18,8 +18,4 @@ export class ProductsService {
   }
 
 
-  logout(){
-    localStorage.removeItem('token');
-    this.router.navigateByUrl('/login');
-  }
 }
