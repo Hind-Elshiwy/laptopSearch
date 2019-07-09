@@ -18,7 +18,7 @@ productsRoutes.get("", (req, res, next) => {
                 q = req.query.q
                 // console.log(req.query.q)
                 labtops = result.filter(obj=> {
-                    return (obj.Company.toLowerCase() == q.toLowerCase()) || (obj.Product.includes(q))
+                    return (obj.Company.toLowerCase().includes(q.toLowerCase())) || (obj.Product.toLowerCase().includes(q.toLowerCase()))
                 })
             }
             if(req.query.filters) {

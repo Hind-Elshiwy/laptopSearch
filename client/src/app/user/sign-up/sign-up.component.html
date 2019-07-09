@@ -1,7 +1,6 @@
 
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
   
-
   <input type="text" #name="ngModel" [(ngModel)]="userService.user.name" name="name" placeholder="Full Name" required
     [ngClass]="{'invalid-textbox' :signUpForm.submitted && !name.valid }">
   <div *ngIf="signUpForm.submitted && !name.valid">
@@ -20,10 +19,7 @@
     <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
     <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 6 characters.</label>
   </div>
- 
-  <div *ngIf="signUpForm.submitted">
-    <label class="validation-message">This field is required.</label>
-  </div>
+
 
   <input type="submit" value="Sign Up">
 </form>
@@ -32,7 +28,7 @@
 <!-- Success message -->
 <div class="success" *ngIf="showSucessMessage">
     Saved successfully
-  </div>
+</div>
   
   <!-- Error message -->
   <div class="alert" *ngIf="serverErrorMessages">

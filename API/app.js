@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 
 app.use("/user", userRoutes);
 // Authentication midleware
-app.use(authenticate);
+// app.use(authenticate);
 app.use("/products", productsRoutes);
 
 app.use('/', indexRouter);

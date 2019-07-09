@@ -1,17 +1,28 @@
 <form #productsForm="ngForm" (ngSubmit)="onSubmit(productsForm)" class="form-inline" >
+    <!--Blue select-->
   <!-- {{ productsForm.value | json }} -->
 <nav class="navbar navbar-light justify-content-between"  style="background-color: #0000008f;">
-  <input type="text"  class="form-control"  name="query" #query="ngModel" [(ngModel)]="q" placeholder="Company or product name" aria-label="Search">
-  <button type="submit" class="btn btn-outline-success " name="submit"  style="color: rgb(66, 255, 239)">Search</button>
-  <a class="btn btn-info navbar-brand" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Filters
-</a>
-    <h5 >Welcom {{ userDetails.name |json}} </h5>
-  <button type="button" class="btn btn-success" (click)="onLogout()">Logout</button>
+    <div class="input-group">
+        <input type="text" class="form-control Search" name="query" #query="ngModel" [(ngModel)]="q" placeholder="Company or product name" aria-label="Search" >
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <a class="btn btn-info navbar-brand" style="margin-left: 5px;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Filters
+        </a>
+      </div>
+      <div>
+        <span style="color: white; margin-right: 10px;">Welcome  {{ userDetails?.name }}</span>
+        <button type="button" class="btn btn-success" (click)="onLogout()">Logout</button>
+      </div>
+  
   
 </nav>
-          <div class="collapse" id="collapseExample">
-              <div class="card card-body" >
+    <div class="collapse" id="collapseExample" style="width: 100%">
+      <div class="card card-body" >
+       <h4>Ram</h4> 
         <select name="ram" #filters[ram]="ngModel" [(ngModel)]="ram"  class="form-control">
           <option disabled>RAM</option>
           <option value="2GB">2GB</option>
@@ -22,7 +33,7 @@
           <option value="16GB">16GB</option>
           <option value="32GB">32GB</option>
         </select>
-      
+        <h4>Cpu</h4>
         <select name="cpu" #filters[cpu]="ngModel" [(ngModel)]="cpu" class="form-control">
           <option disabled>CPU</option>
           <option value="Core i3">Core i3</option>
@@ -40,7 +51,7 @@
           <option value="Atom x5-Z8550">Atom x5-Z8550</option>
           <option value="Dual Core 4405Y">Dual Core 4405Y</option>
         </select>
-      
+        <h4>OpSys</h4>
         <select name="opsys" #filters[opsys]="ngModel" [(ngModel)]="opsys" class="form-control">
           <option disabled>OPSYS</option>
           <option value="macOS">macOS</option>
@@ -52,7 +63,7 @@
           <option value="Chrome OS">Chrome OS</option>
           <option value="No OS">No OS</option>
         </select>
-      
+      <h4>Inches</h4>
         <select name="inches" #filters[inches]="ngModel" [(ngModel)]="inches" class="form-control">
             <option disabled>Inches</option>
           <option value="10.1">10.1</option>
@@ -71,21 +82,28 @@
 
 </form>
 
+
+<!-- <div class="container-fluid"> -->
+  <div class="row">
   <div *ngFor="let product of products" style="color: #ffffff;">
       <div class="contactHolder"  id="column">
  <ul id="list">
    <li>Company :  {{product.Company}} </li>
    <li>Product :  {{product.Product}} </li>
    <li>Type    :  {{product.Type}} </li>
-   <li >Inches    :  {{product.Inches}} </li>
-   <li >Resolution    :  {{product.Resolution}} </li>
    <li>CPU     :  {{product.CPU}} </li>
    <li>RAM     :  {{product.RAM}} </li>
-   <li>Memory     :  {{product.Memory}} </li>
-   <li >Graphics     :  {{product.Graphics}} </li>
-   <li>OpSys     :  {{product.OpSys}} </li>
-   <li >Weight     :  {{product.Weight}} </li>
    <li>Price   :  {{product.Price}} </li>
- </ul>
+  <div *ngIf="!isMobileResolution">
+   <li id="candidate">Memory     :  {{product.Memory}} </li>
+   <li id="candidate">Graphics     :  {{product.Graphics}} </li>
+   <li id="candidate">OpSys     :  {{product.OpSys}} </li>
+   <li id="candidate">Weight     :  {{product.Weight}} </li>
+   <li id="candidate">Inches    :  {{product.Inches}} </li>
+   <li id="candidate">Resolution    :  {{product.Resolution}} </li>
+  </div> 
+  </ul>
 </div>
     </div>
+
+  </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ProductsService } from './products.service';
 import { Product } from './product.model';
 import { NgForm } from '@angular/forms';
@@ -12,8 +12,6 @@ import { UserService } from './../user/user.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
- 
-
   constructor(private productservice: ProductsService,private UserService: UserService, private router: Router, 
     private route: ActivatedRoute ) { }
   public url= "";
@@ -25,11 +23,19 @@ export class ProductsComponent implements OnInit {
   public products:Product[];
   public serverErrorMessages;
   public filters = false
-
+  public isMobileResolution: boolean;
   userDetails;
   error;
 
-
+  @HostListener('window:resize')
+    onWindowResize() {
+      console.log(window.innerWidth)
+      if (window.innerWidth < 768) {
+        this.isMobileResolution = true;
+      } else {
+        this.isMobileResolution = false;
+      }
+    }
   ngOnInit() {
 
     this.UserService.getUser().subscribe(
@@ -81,6 +87,11 @@ export class ProductsComponent implements OnInit {
       if(this.inches) {
         this.url += "&filters[inches]=" + this.inches
       }
+    } 
+    else {
+      this.url = ""
+      this.products = []
+      this.router.navigateByUrl('/products'); 
     }
     this.router.navigateByUrl('/products'+this.url); 
     this.productservice.getProducts(this.url).subscribe(

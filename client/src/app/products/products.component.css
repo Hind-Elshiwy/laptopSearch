@@ -41,3 +41,53 @@ li{
     width: 100%;
   }
 
+  /* Styles for wrapping the search box */
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+
+h4{
+  color: aqua;
+}
+.card-body{
+  background-color: rgba(0, 0, 0, 0.239);
+  
+}
+.form-inline .form-control{
+  background-color:rgba(166, 255, 255, 0.294);
+}
+
+.Search::placeholder {
+color:white; 
+}
+
+
+.in{
+  display: inline;
+}
+
+
+.input-group-append{
+height: 39px;
+}
