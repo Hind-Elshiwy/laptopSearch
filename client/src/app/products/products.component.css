@@ -91,3 +91,7 @@ color:white;
 .input-group-append{
 height: 39px;
 }
+
+.navbar-light .navbar-brand{
+  color: aqua;
+}
