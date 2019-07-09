@@ -66,12 +66,19 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-
+  toggleFilters() {
+    this.filters = this.filters == false ? true : false
+    if(!this.filters) {
+      this.ram = null;
+      this.cpu = null;
+      this.opsys = null;
+      this.inches = null;
+    }
+  }
 
   onSubmit(){
     if(this.q){
       this.url = "?q=" + this.q
-      let filters = []
       if(this.ram) {
         this.url += "&filters[ram]=" + this.ram
       }

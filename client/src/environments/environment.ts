@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: "http://localhost:3000",
-  cities: ['Cairo', 'Giza', 'Alexandria', '6th of October', 'Dakahlia', 'New Valley', 'Matruh', 'Red Sea', 'South Sinai', 'North Sinai', 'Suez', 'Beheira', 'Helwan', 'Sharqia', ' Kafr El-Sheikh', 'Monufia', 'Minya', 'Gharbia', 'Faiyum', 'Qena', 'Asyut', 'Sohag', 'Ismailia', 'Beni Suef', 'Qalyubia', 'Aswan', 'Damietta', 'Port Said', 'Luxor']
+  apiBaseUrl: "http://localhost:3000/api",
+  //apiBaseUrl: "https://labtops-search-app.herokuapp.com/api",
 };
 
 /*

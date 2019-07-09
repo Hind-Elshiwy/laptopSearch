@@ -18,8 +18,7 @@ export class SignUpComponent implements OnInit {
     this.userService.addUser(form.value).subscribe(
       res => {
         this.userService.setToken(res['token']);
-        if (form.value.role === "player") this.router.navigateByUrl('/player/profile');
-        else if (form.value.role === "owner") this.router.navigateByUrl('/owner/profile');
+        this.router.navigateByUrl('/products');
       },
       err => {
         if (err.status === 422) {
