@@ -95,3 +95,7 @@ height: 39px;
 .navbar-light .navbar-brand{
   color: aqua;
 }
+
+select{
+  color: wheat;
+}
